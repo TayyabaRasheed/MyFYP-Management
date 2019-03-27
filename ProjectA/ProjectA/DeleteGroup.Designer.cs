@@ -50,8 +50,11 @@
             this.groupWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.individualEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.editGroupEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupsWithProjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.advisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.gdGroupRecord)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,7 +131,8 @@
             this.addInstructorToolStripMenuItem1,
             this.evaluateGroupsToolStripMenuItem,
             this.groupToolStripMenuItem,
-            this.projectToolStripMenuItem});
+            this.projectToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(572, 24);
@@ -236,6 +240,13 @@
             this.updateDeleteEvaluationToolStripMenuItem.Text = "UpdateDelete Evaluation";
             this.updateDeleteEvaluationToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteEvaluationToolStripMenuItem_Click);
             // 
+            // editGroupEvaluationToolStripMenuItem
+            // 
+            this.editGroupEvaluationToolStripMenuItem.Name = "editGroupEvaluationToolStripMenuItem";
+            this.editGroupEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.editGroupEvaluationToolStripMenuItem.Text = "EditGroup Evaluation";
+            this.editGroupEvaluationToolStripMenuItem.Click += new System.EventHandler(this.editGroupEvaluationToolStripMenuItem_Click);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(40, 237);
@@ -246,12 +257,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // editGroupEvaluationToolStripMenuItem
+            // reportsToolStripMenuItem
             // 
-            this.editGroupEvaluationToolStripMenuItem.Name = "editGroupEvaluationToolStripMenuItem";
-            this.editGroupEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.editGroupEvaluationToolStripMenuItem.Text = "EditGroup Evaluation";
-            this.editGroupEvaluationToolStripMenuItem.Click += new System.EventHandler(this.editGroupEvaluationToolStripMenuItem_Click);
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupsWithProjectsToolStripMenuItem,
+            this.advisorToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // groupsWithProjectsToolStripMenuItem
+            // 
+            this.groupsWithProjectsToolStripMenuItem.Name = "groupsWithProjectsToolStripMenuItem";
+            this.groupsWithProjectsToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.groupsWithProjectsToolStripMenuItem.Text = "GroupsWithProjects";
+            this.groupsWithProjectsToolStripMenuItem.Click += new System.EventHandler(this.groupsWithProjectsToolStripMenuItem_Click);
+            // 
+            // advisorToolStripMenuItem
+            // 
+            this.advisorToolStripMenuItem.Name = "advisorToolStripMenuItem";
+            this.advisorToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.advisorToolStripMenuItem.Text = "AdvisorsWithGroup&Project";
             // 
             // DeleteGroup
             // 
@@ -298,5 +324,8 @@
         private System.Windows.Forms.ToolStripMenuItem updateDeleteEvaluationToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem editGroupEvaluationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem groupsWithProjectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem advisorToolStripMenuItem;
     }
 }

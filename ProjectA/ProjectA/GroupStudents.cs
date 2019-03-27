@@ -290,6 +290,13 @@ namespace ProjectA
             this.Hide();
         }
 
+        private void groupWithProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowGroupProjects l = ShowGroupProjects.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
         //private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    GroupID = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value);

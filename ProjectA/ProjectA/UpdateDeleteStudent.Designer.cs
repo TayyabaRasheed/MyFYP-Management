@@ -67,6 +67,9 @@
             this.individualEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editGroupEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupsWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.advisorsWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -284,7 +287,8 @@
             this.addInstructorToolStripMenuItem1,
             this.evaluateGroupsToolStripMenuItem,
             this.groupToolStripMenuItem,
-            this.projectToolStripMenuItem});
+            this.projectToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(877, 24);
@@ -399,6 +403,28 @@
             this.editGroupEvaluationToolStripMenuItem.Text = "EditGroup Evaluation";
             this.editGroupEvaluationToolStripMenuItem.Click += new System.EventHandler(this.editGroupEvaluationToolStripMenuItem_Click);
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupsWithProjectToolStripMenuItem,
+            this.advisorsWithGroupProjectToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // groupsWithProjectToolStripMenuItem
+            // 
+            this.groupsWithProjectToolStripMenuItem.Name = "groupsWithProjectToolStripMenuItem";
+            this.groupsWithProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.groupsWithProjectToolStripMenuItem.Text = "GroupsWithProject";
+            this.groupsWithProjectToolStripMenuItem.Click += new System.EventHandler(this.groupsWithProjectToolStripMenuItem_Click);
+            // 
+            // advisorsWithGroupProjectToolStripMenuItem
+            // 
+            this.advisorsWithGroupProjectToolStripMenuItem.Name = "advisorsWithGroupProjectToolStripMenuItem";
+            this.advisorsWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.advisorsWithGroupProjectToolStripMenuItem.Text = "AdvisorsWithGroupProject";
+            // 
             // UpdateDeleteStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,5 +500,8 @@
         private System.Windows.Forms.ToolStripMenuItem updateDeleteProjectDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteGroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editGroupEvaluationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem groupsWithProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem advisorsWithGroupProjectToolStripMenuItem;
     }
 }

@@ -49,6 +49,7 @@
             this.groupWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.individualEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editGroupEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,7 +57,9 @@
             this.cmdSave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.gdAdvisorRecord = new System.Windows.Forms.DataGridView();
-            this.editGroupEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupsWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.advisorsWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdAdvisorRecord)).BeginInit();
             this.SuspendLayout();
@@ -130,7 +133,8 @@
             this.addInstructorToolStripMenuItem1,
             this.evaluateGroupsToolStripMenuItem,
             this.groupToolStripMenuItem,
-            this.projectToolStripMenuItem});
+            this.projectToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(829, 24);
@@ -231,6 +235,13 @@
             this.updateDeleteEvaluationToolStripMenuItem.Text = "UpdateDelete Evaluation";
             this.updateDeleteEvaluationToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteEvaluationToolStripMenuItem_Click);
             // 
+            // editGroupEvaluationToolStripMenuItem
+            // 
+            this.editGroupEvaluationToolStripMenuItem.Name = "editGroupEvaluationToolStripMenuItem";
+            this.editGroupEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.editGroupEvaluationToolStripMenuItem.Text = "EditGroup Evaluation";
+            this.editGroupEvaluationToolStripMenuItem.Click += new System.EventHandler(this.editGroupEvaluationToolStripMenuItem_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -300,12 +311,27 @@
             this.gdAdvisorRecord.TabIndex = 37;
             this.gdAdvisorRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdAdvisorRecord_CellClick);
             // 
-            // editGroupEvaluationToolStripMenuItem
+            // reportsToolStripMenuItem
             // 
-            this.editGroupEvaluationToolStripMenuItem.Name = "editGroupEvaluationToolStripMenuItem";
-            this.editGroupEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.editGroupEvaluationToolStripMenuItem.Text = "EditGroup Evaluation";
-            this.editGroupEvaluationToolStripMenuItem.Click += new System.EventHandler(this.editGroupEvaluationToolStripMenuItem_Click);
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupsWithProjectToolStripMenuItem,
+            this.advisorsWithGroupProjectToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // groupsWithProjectToolStripMenuItem
+            // 
+            this.groupsWithProjectToolStripMenuItem.Name = "groupsWithProjectToolStripMenuItem";
+            this.groupsWithProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.groupsWithProjectToolStripMenuItem.Text = "GroupsWithProject";
+            this.groupsWithProjectToolStripMenuItem.Click += new System.EventHandler(this.groupsWithProjectToolStripMenuItem_Click);
+            // 
+            // advisorsWithGroupProjectToolStripMenuItem
+            // 
+            this.advisorsWithGroupProjectToolStripMenuItem.Name = "advisorsWithGroupProjectToolStripMenuItem";
+            this.advisorsWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.advisorsWithGroupProjectToolStripMenuItem.Text = "AdvisorsWithGroupProject";
             // 
             // UpdateDeleteAdvisor
             // 
@@ -362,5 +388,8 @@
         private System.Windows.Forms.ToolStripMenuItem updateDeleteProjectDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteGroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editGroupEvaluationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem groupsWithProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem advisorsWithGroupProjectToolStripMenuItem;
     }
 }

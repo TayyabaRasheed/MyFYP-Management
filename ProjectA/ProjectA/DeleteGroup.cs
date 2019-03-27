@@ -203,5 +203,12 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
+
+        private void groupsWithProjectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowGroupProjects l = ShowGroupProjects.getInstance();
+            l.Show();
+            this.Hide();
+        }
     }
 }
