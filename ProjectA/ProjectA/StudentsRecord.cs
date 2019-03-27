@@ -32,6 +32,7 @@ namespace ProjectA
                 return l;
             }
         }
+       
         private void StudentsRecord_Load(object sender, EventArgs e)
         {
             //String cmd = "Select * from Person";
@@ -57,7 +58,9 @@ namespace ProjectA
         private void GetStudentRecord()
         {
             SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
-            SqlCommand cmd = new SqlCommand("Select * from Person", con);
+            //SqlCommand cmd = new SqlCommand("Select * from Person", con);
+            SqlCommand cmd = new SqlCommand("SELECT Person.FirstName,Person.LastName,Person.Contact,Person.Email,Person.DateOfBirth,Person.Gender,Student.RegistrationNo from Person INNER JOIN Student on Person.Id=Student.Id ", con);
+  
 
             DataTable dt = new DataTable();
             con.Open();
