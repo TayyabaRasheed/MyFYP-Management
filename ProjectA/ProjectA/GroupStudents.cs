@@ -43,6 +43,7 @@ namespace ProjectA
             chkbox.Width = 30;
             chkbox.Name = "checkBoxColumn";
             dataGridView1.Columns.Insert(0, chkbox);
+            textBox1.Visible = false;
         }
 
         private void GetStudentRecord()
@@ -59,55 +60,43 @@ namespace ProjectA
             dataGridView1.DataSource = dt;
         }
 
-        //private void GetGroups()
-        //{
-        //    SqlCommand cmd = new SqlCommand("Select * from [Group]", con);
-
-        //    DataTable dt = new DataTable();
-        //    con.Open();
-
-        //    SqlDataReader rd = cmd.ExecuteReader();
-        //    dt.Load(rd);
-        //    con.Close();
-
-        //    dataGridView2.DataSource = dt;
-        //}
+        
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             stdID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[1].Value);
-           // textBox2.Text = stdID.ToString();
+            bool isChecked = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
+            CheckCount(isChecked);
+            // textBox2.Text = stdID.ToString();
+        }
+        int num = 0;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bool isChecked = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
+            CheckCount(isChecked);
         }
 
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bool isChecked = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
+            CheckCount(isChecked);
+        }
+        private void CheckCount(bool isChecked)
+        {
+            if (isChecked)
+            {
+                num++;
+            }
+            //else
+            //{
+            //    num--;
+            //}
+            // "Selected Items: "+
+            textBox1.Text =   Convert.ToString(num) ;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
-           // string mincon = ConfigurationManager.ConnectionStrings[""];
-
-            //con.Open();
-            //SqlCommand cmd2 = new SqlCommand("Insert into GroupStudent Values (@GroupId,@StudentId,@Status,@AssignmentDate)", con);
-            //cmd2.CommandType = CommandType.Text;
-
-            //cmd2.Parameters.AddWithValue("@GroupId", Convert.ToInt32(textBox1.Text));
-
-
-
-
-            //cmd2.Parameters.AddWithValue("@StudentId", Convert.ToInt32(textBox2.Text));
-            //int status = 0;
-            //if (cmbStatus.Text == "Active")
-            //{
-            //    status = 3;
-            //}
-            //else if (cmbStatus.Text == "In-active")
-            //{
-            //    status = 4;
-            //}
-            //cmd2.Parameters.AddWithValue("@Status", status);
-            //cmd2.Parameters.AddWithValue("@AssignmentDate", dtpAssDate.Value);
-            //cmd2.ExecuteNonQuery();
-            //con.Close();
-            //MessageBox.Show("Student Added in the Group Successfully", "GroupCreated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            con.Close();
             con.Open();
 
             SqlCommand cmd = new SqlCommand("Insert into [Group] Values (@Created_On)", con);
@@ -118,55 +107,72 @@ namespace ProjectA
             SqlCommand cdd = new SqlCommand("select IDENT_CURRENT('Group')", con);
             int s = Convert.ToInt32(cdd.ExecuteScalar());
 
-
-            foreach(DataGridViewRow dr in dataGridView1.Rows)
+            if (Convert.ToInt32(textBox1.Text) < 4 || Convert.ToInt32(textBox1.Text) > 4)
             {
-                bool chkboxselected = Convert.ToBoolean(dr.Cells["checkBoxColumn"].Value);
-                if(chkboxselected)
-                {
-                    SqlCommand cmd2 = new SqlCommand("Insert into GroupStudent Values (@GroupId,@StudentId,@Status,@AssignmentDate)", con);
-                    cmd2.CommandType = CommandType.Text;
-
-                    cmd2.Parameters.AddWithValue("@GroupId", s);
-                    cmd2.Parameters.AddWithValue("@StudentId", dr.Cells[1].Value);
-                    int status = 0;
-                    if (cmbStatus.Text == "Active")
-                    {
-                        status = 3;
-                    }
-                    else if (cmbStatus.Text == "In-active")
-                    {
-                        status = 4;
-                    }
-                    cmd2.Parameters.AddWithValue("@Status", status);
-                    cmd2.Parameters.AddWithValue("@AssignmentDate", dtpAssDate.Value);
-                    cmd2.ExecuteNonQuery();
-                }
+                MessageBox.Show("Minimum Students count is 04", "GroupCreated", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    bool chkboxselected = Convert.ToBoolean(dr.Cells["checkBoxColumn"].Value);
+                    if (chkboxselected)
+                    {
+                        SqlCommand cmd2 = new SqlCommand("Insert into GroupStudent Values (@GroupId,@StudentId,@Status,@AssignmentDate)", con);
+                        cmd2.CommandType = CommandType.Text;
 
-            //SqlCommand cmd2 = new SqlCommand("Insert into GroupStudent Values (@GroupId,@StudentId,@Status,@AssignmentDate)", con);
-            //cmd2.CommandType = CommandType.Text;
+                        cmd2.Parameters.AddWithValue("@GroupId", s);
+                        cmd2.Parameters.AddWithValue("@StudentId", dr.Cells[1].Value);
 
-            //cmd2.Parameters.AddWithValue("@GroupId", s);
+                        string LookUp = "Select Id from Lookup where Value = '" + cmbStatus.Text + "'";
+                        SqlCommand nd = new SqlCommand(LookUp, con);
+                        SqlDataReader r = nd.ExecuteReader();
+                        int ID = 0;
+                        while (r.Read())
+                        {
+                            ID = r.GetInt32(0);
+                        }
+                        r.Close();
+
+                        //int status = 0;
+                        //if (cmbStatus.Text == "Active")
+                        //{
+                        //    status = 3;
+                        //}
+                        //else if (cmbStatus.Text == "In-active")
+                        //{
+                        //    status = 4;
+                        //}
+                        cmd2.Parameters.AddWithValue("@Status", ID);
+                        cmd2.Parameters.AddWithValue("@AssignmentDate", dtpAssDate.Value);
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+
+                //SqlCommand cmd2 = new SqlCommand("Insert into GroupStudent Values (@GroupId,@StudentId,@Status,@AssignmentDate)", con);
+                //cmd2.CommandType = CommandType.Text;
+
+                //cmd2.Parameters.AddWithValue("@GroupId", s);
 
 
 
 
-            //cmd2.Parameters.AddWithValue("@StudentId", this.stdID);
-            //int status = 0;
-            //if (cmbStatus.Text == "Active")
-            //{
-            //    status = 3;
-            //}
-            //else if (cmbStatus.Text == "In-active")
-            //{
-            //    status = 4;
-            //}
-            //cmd2.Parameters.AddWithValue("@Status", status);
-            //cmd2.Parameters.AddWithValue("@AssignmentDate", dtpAssDate.Value);
-            //cmd2.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Student Added in the Group Successfully", "GroupCreated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //cmd2.Parameters.AddWithValue("@StudentId", this.stdID);
+                //int status = 0;
+                //if (cmbStatus.Text == "Active")
+                //{
+                //    status = 3;
+                //}
+                //else if (cmbStatus.Text == "In-active")
+                //{
+                //    status = 4;
+                //}
+                //cmd2.Parameters.AddWithValue("@Status", status);
+                //cmd2.Parameters.AddWithValue("@AssignmentDate", dtpAssDate.Value);
+                //cmd2.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Student Added in the Group Successfully", "GroupCreated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
 
@@ -303,7 +309,7 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
-
+        
         //private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    GroupID = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value);

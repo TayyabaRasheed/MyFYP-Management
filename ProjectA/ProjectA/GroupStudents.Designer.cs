@@ -61,6 +61,7 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advisorsWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,13 +75,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(286, 228);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Active",
-            "In-active"});
+            "InActive"});
             this.cmbStatus.Location = new System.Drawing.Point(237, 142);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(200, 21);
@@ -338,11 +341,19 @@
             this.advisorsWithGroupProjectToolStripMenuItem.Text = "MarksSheet";
             this.advisorsWithGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.advisorsWithGroupProjectToolStripMenuItem_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(337, 283);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 23;
+            // 
             // GroupStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 360);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dptCreate);
@@ -398,5 +409,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupWithProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advisorsWithGroupProjectToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -184,7 +184,7 @@
             this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(526, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(434, 24);
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -255,7 +255,7 @@
             // groupsWithProjectsToolStripMenuItem
             // 
             this.groupsWithProjectsToolStripMenuItem.Name = "groupsWithProjectsToolStripMenuItem";
-            this.groupsWithProjectsToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.groupsWithProjectsToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.groupsWithProjectsToolStripMenuItem.Text = "GroupsWithProjects";
             this.groupsWithProjectsToolStripMenuItem.Click += new System.EventHandler(this.groupsWithProjectsToolStripMenuItem_Click);
             // 
@@ -343,6 +343,7 @@
             this.Controls.Add(this.cmdSave);
             this.Name = "Advisor";
             this.Text = "Advisor";
+            this.Load += new System.EventHandler(this.Advisor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -301,5 +301,10 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
+
+        private void Advisor_Load(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
+        }
     }
 }

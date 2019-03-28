@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 
 namespace ProjectA
@@ -125,6 +126,7 @@ namespace ProjectA
         }
 
 
+       
         private void cmdSave_Click(object sender, EventArgs e)
         {
             con.Close();
@@ -169,6 +171,12 @@ namespace ProjectA
                 MessageBox.Show("Enter vailid registration number  FORMAT IS xxxx-xx-xxx");
 
             }
+
+            else if ((txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".com"))==false)
+            {
+                MessageBox.Show("Invalid Mail Correct Email Address format is ----@----.com");
+            }
+           
 
             else
             {
