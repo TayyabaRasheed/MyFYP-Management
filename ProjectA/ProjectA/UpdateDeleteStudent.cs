@@ -280,5 +280,12 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
+
+        private void advisorsWithGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MarksSheet l = MarksSheet.getInstance();
+            l.Show();
+            this.Hide();
+        }
     }
 }

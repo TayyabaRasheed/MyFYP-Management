@@ -64,6 +64,7 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupsWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advisorWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gdGroupInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdProjectInfo)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -73,14 +74,14 @@
             // 
             this.txtProjectId.Location = new System.Drawing.Point(123, 57);
             this.txtProjectId.Name = "txtProjectId";
-            this.txtProjectId.Size = new System.Drawing.Size(100, 20);
+            this.txtProjectId.Size = new System.Drawing.Size(200, 20);
             this.txtProjectId.TabIndex = 0;
             // 
             // txtGroupId
             // 
             this.txtGroupId.Location = new System.Drawing.Point(123, 84);
             this.txtGroupId.Name = "txtGroupId";
-            this.txtGroupId.Size = new System.Drawing.Size(100, 20);
+            this.txtGroupId.Size = new System.Drawing.Size(200, 20);
             this.txtGroupId.TabIndex = 1;
             // 
             // label1
@@ -88,9 +89,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Project ID";
+            this.label1.Text = "Project ID ";
             // 
             // label2
             // 
@@ -364,14 +365,26 @@
             // advisorWithGroupProjectToolStripMenuItem
             // 
             this.advisorWithGroupProjectToolStripMenuItem.Name = "advisorWithGroupProjectToolStripMenuItem";
-            this.advisorWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.advisorWithGroupProjectToolStripMenuItem.Text = "AdvisorWithGroupProject";
+            this.advisorWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.advisorWithGroupProjectToolStripMenuItem.Text = "MarksSheet";
+            this.advisorWithGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.advisorWithGroupProjectToolStripMenuItem_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(120, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(370, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Select Both ID\'s from DataGrid by Clicking the desired Row/Cell";
             // 
             // GroupProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 307);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
@@ -434,5 +447,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupsWithProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advisorWithGroupProjectToolStripMenuItem;
+        private System.Windows.Forms.Label label6;
     }
 }

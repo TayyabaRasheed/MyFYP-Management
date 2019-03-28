@@ -102,6 +102,12 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="MarksSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarksSheet.Designer.cs">
+      <DependentUpon>MarksSheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyAdvisor.cs" />
     <Compile Include="MyStudent.cs" />
     <Compile Include="Program.cs" />
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarksSheet.resx">
+      <DependentUpon>MarksSheet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Project.resx">
       <DependentUpon>Project.cs</DependentUpon>

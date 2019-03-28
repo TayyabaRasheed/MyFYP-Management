@@ -311,15 +311,16 @@
             // groupsWithProjectToolStripMenuItem
             // 
             this.groupsWithProjectToolStripMenuItem.Name = "groupsWithProjectToolStripMenuItem";
-            this.groupsWithProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.groupsWithProjectToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.groupsWithProjectToolStripMenuItem.Text = "GroupsWithProject";
             this.groupsWithProjectToolStripMenuItem.Click += new System.EventHandler(this.groupsWithProjectToolStripMenuItem_Click);
             // 
             // advisorsWithGroupProjectToolStripMenuItem
             // 
             this.advisorsWithGroupProjectToolStripMenuItem.Name = "advisorsWithGroupProjectToolStripMenuItem";
-            this.advisorsWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.advisorsWithGroupProjectToolStripMenuItem.Text = "AdvisorsWithGroupProject";
+            this.advisorsWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.advisorsWithGroupProjectToolStripMenuItem.Text = "MarksSheet";
+            this.advisorsWithGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.advisorsWithGroupProjectToolStripMenuItem_Click);
             // 
             // Evaluation
             // 

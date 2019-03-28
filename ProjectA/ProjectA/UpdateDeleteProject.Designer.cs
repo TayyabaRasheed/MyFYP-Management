@@ -50,6 +50,9 @@
             this.createProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteProjectDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupsWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.advisorsWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,9 +60,6 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.gdProjectRecord = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupsWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.advisorsWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdProjectRecord)).BeginInit();
             this.SuspendLayout();
@@ -229,6 +229,29 @@
             this.updateDeleteProjectDetailsToolStripMenuItem.Text = "UpdateDelete Project Details";
             this.updateDeleteProjectDetailsToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteProjectDetailsToolStripMenuItem_Click);
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupsWithProjectToolStripMenuItem,
+            this.advisorsWithGroupProjectToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // groupsWithProjectToolStripMenuItem
+            // 
+            this.groupsWithProjectToolStripMenuItem.Name = "groupsWithProjectToolStripMenuItem";
+            this.groupsWithProjectToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.groupsWithProjectToolStripMenuItem.Text = "GroupsWithProject";
+            this.groupsWithProjectToolStripMenuItem.Click += new System.EventHandler(this.groupsWithProjectToolStripMenuItem_Click);
+            // 
+            // advisorsWithGroupProjectToolStripMenuItem
+            // 
+            this.advisorsWithGroupProjectToolStripMenuItem.Name = "advisorsWithGroupProjectToolStripMenuItem";
+            this.advisorsWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.advisorsWithGroupProjectToolStripMenuItem.Text = "MarksSheet";
+            this.advisorsWithGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.advisorsWithGroupProjectToolStripMenuItem_Click);
+            // 
             // cmdSave
             // 
             this.cmdSave.Location = new System.Drawing.Point(68, 182);
@@ -290,28 +313,6 @@
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.groupsWithProjectToolStripMenuItem,
-            this.advisorsWithGroupProjectToolStripMenuItem});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // groupsWithProjectToolStripMenuItem
-            // 
-            this.groupsWithProjectToolStripMenuItem.Name = "groupsWithProjectToolStripMenuItem";
-            this.groupsWithProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.groupsWithProjectToolStripMenuItem.Text = "GroupsWithProject";
-            this.groupsWithProjectToolStripMenuItem.Click += new System.EventHandler(this.groupsWithProjectToolStripMenuItem_Click);
-            // 
-            // advisorsWithGroupProjectToolStripMenuItem
-            // 
-            this.advisorsWithGroupProjectToolStripMenuItem.Name = "advisorsWithGroupProjectToolStripMenuItem";
-            this.advisorsWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.advisorsWithGroupProjectToolStripMenuItem.Text = "AdvisorsWithGroupProject";
             // 
             // UpdateDeleteProject
             // 

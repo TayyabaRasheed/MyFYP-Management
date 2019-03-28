@@ -54,6 +54,8 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupsWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advisorsWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -256,21 +258,45 @@
             // groupsWithProjectToolStripMenuItem
             // 
             this.groupsWithProjectToolStripMenuItem.Name = "groupsWithProjectToolStripMenuItem";
-            this.groupsWithProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.groupsWithProjectToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.groupsWithProjectToolStripMenuItem.Text = "GroupsWithProject";
             this.groupsWithProjectToolStripMenuItem.Click += new System.EventHandler(this.groupsWithProjectToolStripMenuItem_Click);
             // 
             // advisorsWithGroupProjectToolStripMenuItem
             // 
             this.advisorsWithGroupProjectToolStripMenuItem.Name = "advisorsWithGroupProjectToolStripMenuItem";
-            this.advisorsWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.advisorsWithGroupProjectToolStripMenuItem.Text = "AdvisorsWithGroupProject";
+            this.advisorsWithGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.advisorsWithGroupProjectToolStripMenuItem.Text = "MarksSheet";
+            this.advisorsWithGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.advisorsWithGroupProjectToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(427, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Report of Students along with Projects and Advisors";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(489, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "The rows of Gridview are merged where the ID\'s are same like ProjectID,GroupID et" +
+    "c";
             // 
             // ShowGroupProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 408);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ShowGroupProjects";
@@ -312,5 +338,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupsWithProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advisorsWithGroupProjectToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

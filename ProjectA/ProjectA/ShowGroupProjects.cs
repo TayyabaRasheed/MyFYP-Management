@@ -35,7 +35,7 @@ namespace ProjectA
         {
             SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
             //SqlCommand cmd = new SqlCommand("Select * from Person", con);
-              SqlCommand cmd = new SqlCommand("SELECT GroupStudent.GroupId,Student.RegistrationNo,GroupProject.ProjectId,Project.Title as ProjectTitle,Project.Description as ProjectDescription from GroupStudent INNER JOIN Student on GroupStudent.StudentId=Student.Id inner join GroupProject on GroupStudent.GroupId=GroupProject.GroupId inner join Project on GroupProject.ProjectId=Project.Id", con);
+              SqlCommand cmd = new SqlCommand("SELECT GroupStudent.GroupId,Student.RegistrationNo,GroupProject.ProjectId,Project.Title as ProjectTitle,Project.Description as ProjectDescription,ProjectAdvisor.AdvisorId,ProjectAdvisor.AdvisorRole from GroupStudent INNER JOIN Student on GroupStudent.StudentId=Student.Id inner join GroupProject on GroupStudent.GroupId=GroupProject.GroupId inner join Project on GroupProject.ProjectId=Project.Id inner join ProjectAdvisor on GroupProject.ProjectId=ProjectAdvisor.ProjectId", con);
           //  SqlCommand cmd = new SqlCommand("SELECT Project.Title  AS ProjectTitle,Project.Description AS ProjectDescription,GroupProject.GroupId,([Group].Created_On),GroupStudent.StudentId from Project INNER JOIN GroupProject on Project.Id=GroupProject.ProjectId inner join [Group] on GroupProject.GroupId=[Group].Id inner join GroupStudent on GroupProject.GroupId=GroupStudent.StudentId", con);
 
 
@@ -48,8 +48,8 @@ namespace ProjectA
             con.Close();
 
             dataGridView1.DataSource = dt;
-           // this.dataGridView1.Columns["ProjectId"].Visible = false;
-            MergeGridviewCells(dataGridView1, new int[] { 0,2 });
+            this.dataGridView1.Columns["AdvisorId"].Visible = false;
+            MergeGridviewCells(dataGridView1, new int[] { 0,2,6 });
         }
         private void ShowGroupProjects_Load(object sender, EventArgs e)
         {
@@ -237,6 +237,13 @@ namespace ProjectA
         private void updateDeleteProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UpdateDeleteProject l = UpdateDeleteProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void advisorsWithGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MarksSheet l = MarksSheet.getInstance();
             l.Show();
             this.Hide();
         }

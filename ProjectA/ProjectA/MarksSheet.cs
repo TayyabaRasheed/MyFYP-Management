@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace ProjectA
 {
-    public partial class DeleteGroup : Form
+    public partial class MarksSheet : Form
     {
-        private static DeleteGroup l = null;
-        public DeleteGroup()
+        private static MarksSheet l = null;
+        public MarksSheet()
         {
             InitializeComponent();
         }
-        public static DeleteGroup getInstance()
+        public static MarksSheet getInstance()
         {
             if (l == null)
             {
-                l = new DeleteGroup();
+                l = new MarksSheet();
                 l.Show();
                 return l;
             }
@@ -31,11 +31,15 @@ namespace ProjectA
                 return l;
             }
         }
-        SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
-        public int stdID { get; set; }
-        private void GetGroupRecord()
+
+        private void GetStudentRecord()
         {
-            SqlCommand cmd = new SqlCommand("Select * from [Group]", con);
+            SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
+            //SqlCommand cmd = new SqlCommand("Select * from Person", con);
+            SqlCommand cmd = new SqlCommand("SELECT GroupStudent.GroupId,Student.RegistrationNo,GroupProject.ProjectId,Project.Title as ProjectTitle,Project.Description as ProjectDescription,GroupEvaluation.ObtainedMarks,Evaluation.Name as Evaluation_Detail from GroupStudent INNER JOIN Student on GroupStudent.StudentId=Student.Id inner join GroupProject on GroupStudent.GroupId=GroupProject.GroupId inner join Project on GroupProject.ProjectId=Project.Id inner join GroupEvaluation on GroupProject.GroupId=GroupEvaluation.GroupId inner join Evaluation on GroupEvaluation.EvaluationId=Evaluation.Id", con);
+            //  SqlCommand cmd = new SqlCommand("SELECT Project.Title  AS ProjectTitle,Project.Description AS ProjectDescription,GroupProject.GroupId,([Group].Created_On),GroupStudent.StudentId from Project INNER JOIN GroupProject on Project.Id=GroupProject.ProjectId inner join [Group] on GroupProject.GroupId=[Group].Id inner join GroupStudent on GroupProject.GroupId=GroupStudent.StudentId", con);
+
+
 
             DataTable dt = new DataTable();
             con.Open();
@@ -44,54 +48,52 @@ namespace ProjectA
             dt.Load(rd);
             con.Close();
 
-            gdGroupRecord.DataSource = dt;
+            dataGridView1.DataSource = dt;
+            this.dataGridView1.Columns["GroupId"].Visible = false;
+            this.dataGridView1.Columns["ProjectId"].Visible = false;
+            MergeGridviewCells(dataGridView1, new int[] { 0 });
         }
-        
-        private void DeleteGroup_Load(object sender, EventArgs e)
+        private void MergeGridviewCells(DataGridView DGV, int[] idx)
         {
-            GetGroupRecord();
-        }
+            DataGridViewRow Prev = null;
 
-        private void gdGroupRecord_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            stdID = Convert.ToInt32(gdGroupRecord.SelectedRows[0].Cells[0].Value);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (stdID > 0)
+            foreach (DataGridViewRow item in DGV.Rows)
             {
-                con.Open();
-                SqlCommand cd = new SqlCommand("Delete GroupStudent where GroupId=@ID ", con);
-                cd.CommandType = CommandType.Text;
-                cd.Parameters.AddWithValue("@ID", this.stdID);
-                cd.ExecuteNonQuery();
+                if (Prev != null)
+                {
+                    string firstCellText = string.Empty;
+                    string secondCellText = string.Empty;
 
-                SqlCommand cd1 = new SqlCommand("Delete GroupProject where GroupId=@ID ", con);
-                cd1.CommandType = CommandType.Text;
-                cd1.Parameters.AddWithValue("@ID", this.stdID);
-                cd1.ExecuteNonQuery();
+                    foreach (int i in idx)
+                    {
+                        DataGridViewCell firstCell = Prev.Cells[i];
+                        DataGridViewCell secondCell = item.Cells[i];
 
-                SqlCommand cd2 = new SqlCommand("Delete GroupEvaluation where GroupId=@ID ", con);
-                cd2.CommandType = CommandType.Text;
-                cd2.Parameters.AddWithValue("@ID", this.stdID);
-                cd2.ExecuteNonQuery();
+                        firstCellText = (firstCell != null && firstCell.Value != null ? firstCell.Value.ToString() : string.Empty);
+                        secondCellText = (secondCell != null && secondCell.Value != null ? secondCell.Value.ToString() : string.Empty);
 
-                SqlCommand cmd = new SqlCommand("Delete [Group] where Id=@ID ", con);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@ID", this.stdID);
-                cmd.ExecuteNonQuery();
-              
-                con.Close();
-                MessageBox.Show("Record Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                GetGroupRecord();
-               
+                        if (firstCellText == secondCellText)
+                        {
+                            secondCell.Style.ForeColor = Color.Transparent;
+                        }
+                        else
+                        {
+                            Prev = item;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    Prev = item;
+                }
             }
-            else
-            {
-                MessageBox.Show("Select a Student to Delete", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
+
+        private void groupsWithProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Show();
         }
 
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -100,9 +102,19 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
+        private void MarksSheet_Load(object sender, EventArgs e)
+        {
+            GetStudentRecord();
+        }
+
+        private void advisorsWithGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
 
         private void seToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             Person l = Person.getInstance();
             l.Show();
             this.Hide();
@@ -164,6 +176,13 @@ namespace ProjectA
             this.Hide();
         }
 
+        private void editGroupEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditEvaluation l = EditEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
         private void groupStudentsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             GroupStudents l = GroupStudents.getInstance();
@@ -173,7 +192,9 @@ namespace ProjectA
 
         private void deleteGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Show();
+            DeleteGroup l = DeleteGroup.getInstance();
+            l.Show();
+            this.Hide();
         }
 
         private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,27 +214,6 @@ namespace ProjectA
         private void updateDeleteProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UpdateDeleteProject l = UpdateDeleteProject.getInstance();
-            l.Show();
-            this.Hide();
-        }
-
-        private void editGroupEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            EditEvaluation l = EditEvaluation.getInstance();
-            l.Show();
-            this.Hide();
-        }
-
-        private void groupsWithProjectsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowGroupProjects l = ShowGroupProjects.getInstance();
-            l.Show();
-            this.Hide();
-        }
-
-        private void advisorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MarksSheet l = MarksSheet.getInstance();
             l.Show();
             this.Hide();
         }

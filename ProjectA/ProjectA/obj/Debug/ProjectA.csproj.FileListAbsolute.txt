@@ -23,3 +23,4 @@ E:\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteProject.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.DeleteGroup.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.EditEvaluation.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.ShowGroupProjects.resources
+E:\ProjectA\ProjectA\obj\Debug\ProjectA.MarksSheet.resources
