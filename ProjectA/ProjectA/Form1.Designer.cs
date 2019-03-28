@@ -40,8 +40,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.rdmale = new System.Windows.Forms.RadioButton();
-            this.rdfml = new System.Windows.Forms.RadioButton();
             this.txtReg = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.assignGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +67,7 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupsWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advisorWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,28 +169,6 @@
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Gender";
-            // 
-            // rdmale
-            // 
-            this.rdmale.AutoSize = true;
-            this.rdmale.Location = new System.Drawing.Point(195, 257);
-            this.rdmale.Name = "rdmale";
-            this.rdmale.Size = new System.Drawing.Size(48, 17);
-            this.rdmale.TabIndex = 13;
-            this.rdmale.TabStop = true;
-            this.rdmale.Text = "Male";
-            this.rdmale.UseVisualStyleBackColor = true;
-            // 
-            // rdfml
-            // 
-            this.rdfml.AutoSize = true;
-            this.rdfml.Location = new System.Drawing.Point(195, 280);
-            this.rdfml.Name = "rdfml";
-            this.rdfml.Size = new System.Drawing.Size(59, 17);
-            this.rdfml.TabIndex = 15;
-            this.rdfml.TabStop = true;
-            this.rdfml.Text = "Female";
-            this.rdfml.UseVisualStyleBackColor = true;
             // 
             // txtReg
             // 
@@ -410,16 +387,26 @@
             this.advisorWithGroupProjectToolStripMenuItem.Text = "MarksSheet";
             this.advisorWithGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.advisorWithGroupProjectToolStripMenuItem_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.comboBox1.Location = new System.Drawing.Point(193, 257);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 19;
+            // 
             // Person
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 359);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtReg);
-            this.Controls.Add(this.rdfml);
-            this.Controls.Add(this.rdmale);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dtpDOB);
             this.Controls.Add(this.txtEmail);
@@ -456,8 +443,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton rdmale;
-        private System.Windows.Forms.RadioButton rdfml;
         private System.Windows.Forms.TextBox txtReg;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem assignGroupProjectToolStripMenuItem;
@@ -485,6 +470,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupsWithProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advisorWithGroupProjectToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

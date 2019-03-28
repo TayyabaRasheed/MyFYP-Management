@@ -101,14 +101,15 @@ namespace ProjectA
             if (stdID > 0)
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Delete GroupProject where ProjectId=@ID ", con);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@ID", this.stdID);
-                cmd.ExecuteNonQuery();
                 SqlCommand cd = new SqlCommand("Delete Project where Id=@ID ", con);
                 cd.CommandType = CommandType.Text;
                 cd.Parameters.AddWithValue("@ID", this.stdID);
                 cd.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand("Delete GroupProject where ProjectId=@ID ", con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@ID", this.stdID);
+                cmd.ExecuteNonQuery();
+                
                 
 
                 con.Close();

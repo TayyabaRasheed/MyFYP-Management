@@ -96,9 +96,18 @@ namespace ProjectA
 
 
             cmd2.Parameters.AddWithValue("@Id", s);
-            
-              
-                int desg = 0;
+
+            string LookUp = "Select Id from Lookup where Value = '" + comboBox1.Text + "'";
+            SqlCommand nd = new SqlCommand(LookUp, con);
+            SqlDataReader r = nd.ExecuteReader();
+            int ID = 0;
+            while (r.Read())
+            {
+                ID = r.GetInt32(0);
+            }
+            r.Close();
+/*
+            int desg = 0;
                 if (comboBox1.Text == "Professor")
                 {
                     desg = 6;
@@ -119,7 +128,8 @@ namespace ProjectA
                 {
                     desg = 10;
             }
-            cmd2.Parameters.AddWithValue("@Designation", desg);
+            */
+            cmd2.Parameters.AddWithValue("@Designation", ID);
             decimal slry = Convert.ToDecimal(txtSalary.Text);
             cmd2.Parameters.AddWithValue("@Salary", slry);
 

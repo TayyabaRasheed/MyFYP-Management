@@ -97,18 +97,21 @@ namespace ProjectA
 
         private void button3_Click(object sender, EventArgs e)
         {
+            con.Open();
 
             if (stdID > 0)
             {
+                
+                SqlCommand cd = new SqlCommand("Delete Student where Id=@ID ", con);
+                cd.CommandType = CommandType.Text;
+                cd.Parameters.AddWithValue("@ID", this.stdID);
+                cd.ExecuteNonQuery();
+                con.Close();
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Delete Person where Id=@ID ", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@ID", this.stdID);
                 cmd.ExecuteNonQuery();
-                SqlCommand cd = new SqlCommand("Delete Student where Id=@ID ", con);
-                cd.CommandType = CommandType.Text;
-                cd.Parameters.AddWithValue("@ID", this.stdID);
-                cd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Record Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -121,7 +124,7 @@ namespace ProjectA
             }
         }
 
-        
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {

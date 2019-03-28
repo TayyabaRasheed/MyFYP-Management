@@ -59,50 +59,167 @@ namespace ProjectA
 
             
         }
+
+
+
+        public bool Checkchar(string s)
+        {
+            if (s.All(Char.IsLetter))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool CheckPhonedigits(string ph)
+        {
+            if (ph.All(Char.IsDigit) == true)
+            {
+                return true;
+            }
+            if (ph.Length!=11)
+            {               
+                return false;
+            }
+            if (ph != "")
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        //Registration Number Under Checking
+        public bool CheckRegnum(string myRegistrationNum)
+        {
+            string sd1,sd2,sd3,sd4,sd5;               
+                       
+
+            sd1 = myRegistrationNum.Substring(0, 4);
+            sd2 = myRegistrationNum.Substring(5, 2);
+            sd3 = myRegistrationNum.Substring(8);
+            sd4 = myRegistrationNum.Substring(4, 1);
+            sd5 = myRegistrationNum.Substring(7, 1);
+
+
+            
+                if ((sd4 == "_" || sd4 == "-") && (sd5 == "_" || sd5 == "-") && sd1.All(Char.IsDigit) && sd2.All(Char.IsLetter) && sd3.All(Char.IsDigit))
+                {
+
+                    return true;
+                }
+                else
+            {
+                return false;
+            }
+                
+           
+
+        }
+
+
         private void cmdSave_Click(object sender, EventArgs e)
         {
+            con.Close();
             con.Open();
-            try
+            if ((Checkchar(txtFirstName.Text)) != true)
             {
-                String frstname = txtFirstName.Text;
-                String lstname = txtLastName.Text;
-                String cntct = txtContact.Text;
-                String mail = txtEmail.Text;
-                DateTime db = dtpDOB.Value;
-             
-                int gndr;
-                if (rdmale.Checked ==true)
-                {
-                    gndr = 1;
-                }
-                else 
-                {
-                    gndr = 2;
-                }
-                
 
-                String cmd = String.Format("INSERT INTO Person(FirstName,LastName,Contact,Email,DateOfBirth,Gender) values('{0}','{1}','{2}','{3}','{4}','{5}' )", frstname, lstname,cntct, mail, db, gndr);
-                int rows = DatabaseConnection.getInstance().exectuteQuery(cmd);
+                MessageBox.Show("First Name Must Contain only Alphabet");
 
-                SqlCommand cdd = new SqlCommand("select IDENT_CURRENT('Person')", con);
-                int s = Convert.ToInt32(cdd.ExecuteScalar());
-
-                SqlCommand cd = new SqlCommand("Insert into Student Values (@Id,@RegistrationNo)", con);
-                cd.CommandType = CommandType.Text;
-                cd.Parameters.AddWithValue("@Id", s);
-                cd.Parameters.AddWithValue("@RegistrationNo", txtReg.Text);
-                cd.ExecuteNonQuery();
-                con.Close();
-
-                MessageBox.Show(String.Format("{0} rows affected", rows));
-                GetStudentRecord();
-                ClearTextBoxs();
             }
-            catch (Exception ex)
+            else if ((Checkchar(txtLastName.Text)) != true)
             {
-                MessageBox.Show(ex.Message);
+
+                MessageBox.Show("Last  Name Must Contain only Alphabet");
+
             }
 
+            else if ((CheckPhonedigits(txtContact.Text)) != true)
+            {
+
+                MessageBox.Show("Contact Must Contain only digits");
+
+            }
+
+            else if ((txtContact.Text.Length)!=11)
+            {
+
+                MessageBox.Show("Contact Must Contain 11 digits");
+
+            }
+
+            else if (CheckRegnum(txtReg.Text) != true)
+            {
+
+                MessageBox.Show("Enter vailid registration number  FORMAT IS xxxx-xx-xxx");
+
+            }
+
+            else if ((txtReg.Text.Length) > 11|| (txtReg.Text.Length) < 10)
+            {
+
+                MessageBox.Show("Enter vailid registration number  FORMAT IS xxxx-xx-xxx");
+
+            }
+
+            else
+            {
+
+
+                try
+                {
+
+
+                    String frstname = txtFirstName.Text;
+                    String lstname = txtLastName.Text;
+                    String cntct = txtContact.Text;
+                    String mail = txtEmail.Text;
+                    DateTime db = dtpDOB.Value;
+
+
+
+
+                    string LookUp = "Select Id from Lookup where Value = '" + comboBox1.Text + "'";
+                    SqlCommand nd = new SqlCommand(LookUp, con);
+                    SqlDataReader r = nd.ExecuteReader();
+                    int ID = 0;
+                    while (r.Read())
+                    {
+                        ID = r.GetInt32(0);
+                    }
+                    r.Close();
+
+                    String cmd = String.Format("INSERT INTO Person(FirstName,LastName,Contact,Email,DateOfBirth,Gender) values('{0}','{1}','{2}','{3}','{4}','{5}' )", frstname, lstname, cntct, mail, db, ID);
+                    int rows = DatabaseConnection.getInstance().exectuteQuery(cmd);
+
+                    SqlCommand cdd = new SqlCommand("select IDENT_CURRENT('Person')", con);
+                    int s = Convert.ToInt32(cdd.ExecuteScalar());
+
+                    SqlCommand cd = new SqlCommand("Insert into Student Values (@Id,@RegistrationNo)", con);
+                    cd.CommandType = CommandType.Text;
+                    cd.Parameters.AddWithValue("@Id", s);
+                    cd.Parameters.AddWithValue("@RegistrationNo", txtReg.Text);
+                    cd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show(String.Format("{0} rows affected", rows));
+                    GetStudentRecord();
+                    ClearTextBoxs();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
         }
         private void ClearTextBoxs()
         {
