@@ -66,81 +66,6 @@ namespace ProjectA
         
         private void cmdSave_Click(object sender, EventArgs e)
         {
-            // String cm = "select Max(AdvisorId)as maxID from Advisor";
-            // int accounts = 0;
-
-            //  string output = "NULL";
-
-
-            
-            con.Open();
-            //SqlCommand cmd3 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
-            //cmd3.Parameters.AddWithValue("@Id", 1);
-            //cmd3.Parameters.AddWithValue("@Designation", 7);
-            //cmd3.Parameters.AddWithValue("@Salary", 10000);
-            //cmd3.ExecuteNonQuery();
-
-            SqlCommand cmd1 = new SqlCommand("select Max(Id)as maxID from Advisor", con);
-            Int32 s = (Int32)cmd1.ExecuteScalar();
-            
-            
-            // s = Convert.ToInt32(cmd1.ExecuteScalar());
-
-            if (s>=1)
-            {
-                s = s + 1;
-            }
-
-            SqlCommand cmd2 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
-            cmd2.CommandType = CommandType.Text;
-
-
-            cmd2.Parameters.AddWithValue("@Id", s);
-
-            string LookUp = "Select Id from Lookup where Value = '" + comboBox1.Text + "'";
-            SqlCommand nd = new SqlCommand(LookUp, con);
-            SqlDataReader r = nd.ExecuteReader();
-            int ID = 0;
-            while (r.Read())
-            {
-                ID = r.GetInt32(0);
-            }
-            r.Close();
-/*
-            int desg = 0;
-                if (comboBox1.Text == "Professor")
-                {
-                    desg = 6;
-                }
-                else if (comboBox1.Text == "Associate Professor")
-                {
-                    desg = 7;
-                }
-                else if (comboBox1.Text == "Assisstant Professor")
-                {
-                    desg = 8;
-                }
-                else if (comboBox1.Text == "Lecturer")
-                {
-                    desg = 9;
-                }
-                else if (comboBox1.Text == "Industry Professional")
-                {
-                    desg = 10;
-            }
-            */
-            cmd2.Parameters.AddWithValue("@Designation", ID);
-            decimal slry = Convert.ToDecimal(txtSalary.Text);
-            cmd2.Parameters.AddWithValue("@Salary", slry);
-
-            // int id = Convert.ToInt32(txtID.Text);
-            //String cmd = String.Format("INSERT INTO Advisor(Id,Designation,Salary) values('{0}','{1}','{2}')", s, desg, slry);
-            //int rows = DatabaseConnection.getInstance().exectuteQuery(cmd);
-            //MessageBox.Show(String.Format("{0} rows affected", rows));
-            cmd2.ExecuteNonQuery();
-            GetAdvisorRecord();
-            con.Close();
-            MessageBox.Show("Advisor Added  Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
            
 
         }
@@ -305,6 +230,232 @@ namespace ProjectA
         private void Advisor_Load(object sender, EventArgs e)
         {
             dataGridView1.Visible = false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmdSave_Click_1(object sender, EventArgs e)
+        {
+            // String cm = "select Max(AdvisorId)as maxID from Advisor";
+            // int accounts = 0;
+
+            //  string output = "NULL";
+
+
+
+            con.Open();
+            //SqlCommand cmd3 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
+            //cmd3.Parameters.AddWithValue("@Id", 1);
+            //cmd3.Parameters.AddWithValue("@Designation", 7);
+            //cmd3.Parameters.AddWithValue("@Salary", 10000);
+            //cmd3.ExecuteNonQuery();
+
+            SqlCommand cmd1 = new SqlCommand("select Max(Id)as maxID from Advisor", con);
+            Int32 s = (Int32)cmd1.ExecuteScalar();
+
+
+            // s = Convert.ToInt32(cmd1.ExecuteScalar());
+
+            if (s >= 1)
+            {
+                s = s + 1;
+            }
+
+            SqlCommand cmd2 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
+            cmd2.CommandType = CommandType.Text;
+
+
+            cmd2.Parameters.AddWithValue("@Id", s);
+
+            string LookUp = "Select Id from Lookup where Value = '" + comboBox1.Text + "'";
+            SqlCommand nd = new SqlCommand(LookUp, con);
+            SqlDataReader r = nd.ExecuteReader();
+            int ID = 0;
+            while (r.Read())
+            {
+                ID = r.GetInt32(0);
+            }
+            r.Close();
+            /*
+                        int desg = 0;
+                            if (comboBox1.Text == "Professor")
+                            {
+                                desg = 6;
+                            }
+                            else if (comboBox1.Text == "Associate Professor")
+                            {
+                                desg = 7;
+                            }
+                            else if (comboBox1.Text == "Assisstant Professor")
+                            {
+                                desg = 8;
+                            }
+                            else if (comboBox1.Text == "Lecturer")
+                            {
+                                desg = 9;
+                            }
+                            else if (comboBox1.Text == "Industry Professional")
+                            {
+                                desg = 10;
+                        }
+                        */
+            cmd2.Parameters.AddWithValue("@Designation", ID);
+            decimal slry = Convert.ToDecimal(txtSalary.Text);
+            cmd2.Parameters.AddWithValue("@Salary", slry);
+
+            // int id = Convert.ToInt32(txtID.Text);
+            //String cmd = String.Format("INSERT INTO Advisor(Id,Designation,Salary) values('{0}','{1}','{2}')", s, desg, slry);
+            //int rows = DatabaseConnection.getInstance().exectuteQuery(cmd);
+            //MessageBox.Show(String.Format("{0} rows affected", rows));
+            cmd2.ExecuteNonQuery();
+            GetAdvisorRecord();
+            con.Close();
+            MessageBox.Show("Advisor Added  Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void homeToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            HomePage l = HomePage.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void seToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Person l = Person.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void searchStudentsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            StudentsRecord l = StudentsRecord.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editStudentDataToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteStudent l = UpdateDeleteStudent.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void addAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Advisor l = Advisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void projectAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ProjectAdvisor l = ProjectAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteAdvisor l = UpdateDeleteAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupWiseToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Evaluation l = Evaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void individualEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            GroupEvaluation l = GroupEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteEvaluation l = UpdateDeleteEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editGroupEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            EditEvaluation l = EditEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupStudentToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            GroupStudents l = GroupStudents.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void deleteGroupToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            DeleteGroup l = DeleteGroup.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void createProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Project l = Project.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void assignGroupProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            GroupProject l = GroupProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeletePojectDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteProject l = UpdateDeleteProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupsWithProjectsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ShowGroupProjects l = ShowGroupProjects.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void advisorWithGroupProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MarksSheet l = MarksSheet.getInstance();
+            l.Show();
+            this.Hide();
         }
     }
 }

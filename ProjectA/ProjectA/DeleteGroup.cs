@@ -54,44 +54,12 @@ namespace ProjectA
 
         private void gdGroupRecord_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            stdID = Convert.ToInt32(gdGroupRecord.SelectedRows[0].Cells[0].Value);
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (stdID > 0)
-            {
-                con.Open();
-                SqlCommand cd = new SqlCommand("Delete GroupStudent where GroupId=@ID ", con);
-                cd.CommandType = CommandType.Text;
-                cd.Parameters.AddWithValue("@ID", this.stdID);
-                cd.ExecuteNonQuery();
-
-                SqlCommand cd1 = new SqlCommand("Delete GroupProject where GroupId=@ID ", con);
-                cd1.CommandType = CommandType.Text;
-                cd1.Parameters.AddWithValue("@ID", this.stdID);
-                cd1.ExecuteNonQuery();
-
-                SqlCommand cd2 = new SqlCommand("Delete GroupEvaluation where GroupId=@ID ", con);
-                cd2.CommandType = CommandType.Text;
-                cd2.Parameters.AddWithValue("@ID", this.stdID);
-                cd2.ExecuteNonQuery();
-
-                SqlCommand cmd = new SqlCommand("Delete [Group] where Id=@ID ", con);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@ID", this.stdID);
-                cmd.ExecuteNonQuery();
-              
-                con.Close();
-                MessageBox.Show("Record Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                GetGroupRecord();
-               
-            }
-            else
-            {
-                MessageBox.Show("Select a Student to Delete", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -214,6 +182,187 @@ namespace ProjectA
         private void advisorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MarksSheet l = MarksSheet.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (stdID > 0)
+            {
+                con.Open();
+                SqlCommand cd = new SqlCommand("Delete GroupStudent where GroupId=@ID ", con);
+                cd.CommandType = CommandType.Text;
+                cd.Parameters.AddWithValue("@ID", this.stdID);
+                cd.ExecuteNonQuery();
+
+                SqlCommand cd1 = new SqlCommand("Delete GroupProject where GroupId=@ID ", con);
+                cd1.CommandType = CommandType.Text;
+                cd1.Parameters.AddWithValue("@ID", this.stdID);
+                cd1.ExecuteNonQuery();
+
+                SqlCommand cd2 = new SqlCommand("Delete GroupEvaluation where GroupId=@ID ", con);
+                cd2.CommandType = CommandType.Text;
+                cd2.Parameters.AddWithValue("@ID", this.stdID);
+                cd2.ExecuteNonQuery();
+
+                SqlCommand cmd = new SqlCommand("Delete [Group] where Id=@ID ", con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@ID", this.stdID);
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+                MessageBox.Show("Record Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                GetGroupRecord();
+
+            }
+            else
+            {
+                MessageBox.Show("Select a Student to Delete", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gdGroupRecord_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            stdID = Convert.ToInt32(gdGroupRecord.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void seToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Person l = Person.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void searchStudentsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            StudentsRecord l = StudentsRecord.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editStudentDataToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+            UpdateDeleteStudent l = UpdateDeleteStudent.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void addAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+            Advisor l = Advisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void projectAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ProjectAdvisor l = ProjectAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteAdvisor l = UpdateDeleteAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupWiseToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Evaluation l = Evaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void individualEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            GroupEvaluation l = GroupEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteEvaluation l = UpdateDeleteEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editGroupEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            EditEvaluation l = EditEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupStudentsToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            GroupStudents l = GroupStudents.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void deleteGroupToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            DeleteGroup l = DeleteGroup.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void createProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Project l = Project.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void assignGroupProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            GroupProject l = GroupProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteProject l = UpdateDeleteProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupsWithProjectsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ShowGroupProjects l = ShowGroupProjects.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void advisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+            MarksSheet l = MarksSheet.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void homeToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            HomePage l = HomePage.getInstance();
             l.Show();
             this.Hide();
         }

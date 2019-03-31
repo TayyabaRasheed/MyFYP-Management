@@ -157,8 +157,8 @@ namespace ProjectA
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", this.stdID);
                 cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                cmd.Parameters.AddWithValue("@TotalMarks", txtTotalMarks.Text);
-                cmd.Parameters.AddWithValue("@TotalWeightage", txtMarksWeightage.Text);               
+                cmd.Parameters.AddWithValue("@TotalMarks", Convert.ToInt32(txtTotalMarks.Text));
+                cmd.Parameters.AddWithValue("@TotalWeightage",Convert.ToInt32( txtMarksWeightage.Text));               
 
                 cmd.ExecuteNonQuery();
                 con.Close();

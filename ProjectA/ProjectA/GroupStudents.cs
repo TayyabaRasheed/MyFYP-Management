@@ -35,7 +35,8 @@ namespace ProjectA
                 return l;
             }
         }
-        private void GroupStudents_Load(object sender, EventArgs e)
+       
+           private void GroupStudents_Load(object sender, EventArgs e)
         {
             GetStudentRecord();
             DataGridViewCheckBoxColumn chkbox = new DataGridViewCheckBoxColumn();
@@ -43,7 +44,7 @@ namespace ProjectA
             chkbox.Width = 30;
             chkbox.Name = "checkBoxColumn";
             dataGridView1.Columns.Insert(0, chkbox);
-            textBox1.Visible = false;
+           textBox1.Visible = false;
         }
 
         private void GetStudentRecord()
@@ -92,8 +93,19 @@ namespace ProjectA
             //    num--;
             //}
             // "Selected Items: "+
+            textBox1.Text = "";
             textBox1.Text =   Convert.ToString(num) ;
         }
+
+
+        //private void UpdateForm()
+        //{
+        //    dataGridView1.Column[[0].Items.Clear();
+        //    comboBoxProducts.Items.AddRange(products.ToArray());
+
+        //    //Other updates
+        //}
+
         private void button1_Click(object sender, EventArgs e)
         {
             con.Close();
@@ -110,6 +122,20 @@ namespace ProjectA
             if (Convert.ToInt32(textBox1.Text) < 4 || Convert.ToInt32(textBox1.Text) > 4)
             {
                 MessageBox.Show("Minimum Students count is 04", "GroupCreated", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //this.Hide();
+                //GroupStudents l = GroupStudents.getInstance();
+                //l.Show();
+                //this.Refresh();
+                int num = 0;
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    r.Cells["checkBoxColumn"].Value = false;
+                    textBox1.Text = "";
+                   // textBox1.Text = Convert.ToString(num);                   
+                   
+                }
+
+
             }
             else
             {
@@ -309,7 +335,12 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
-        
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         //private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    GroupID = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value);

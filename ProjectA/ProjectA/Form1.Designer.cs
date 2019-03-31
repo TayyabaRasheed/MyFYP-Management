@@ -68,12 +68,19 @@
             this.groupsWithProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advisorWithGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdSave
             // 
-            this.cmdSave.Location = new System.Drawing.Point(193, 318);
+            this.cmdSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmdSave.Location = new System.Drawing.Point(242, 225);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(138, 29);
             this.cmdSave.TabIndex = 0;
@@ -83,106 +90,119 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(193, 33);
+            this.txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtFirstName.Location = new System.Drawing.Point(242, 7);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(200, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(138, 20);
             this.txtFirstName.TabIndex = 1;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(193, 74);
+            this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtLastName.Location = new System.Drawing.Point(242, 46);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(200, 20);
+            this.txtLastName.Size = new System.Drawing.Size(138, 20);
             this.txtLastName.TabIndex = 2;
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(193, 112);
+            this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtContact.Location = new System.Drawing.Point(242, 87);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(200, 20);
+            this.txtContact.Size = new System.Drawing.Size(138, 20);
             this.txtContact.TabIndex = 3;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 33);
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(233, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "First Name";
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 74);
+            this.label2.Location = new System.Drawing.Point(3, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(233, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Last Name";
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(65, 112);
+            this.label3.Location = new System.Drawing.Point(3, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(233, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Contact";
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 146);
+            this.label4.Location = new System.Drawing.Point(3, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(233, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Email";
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 178);
+            this.label5.Location = new System.Drawing.Point(3, 151);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.Size = new System.Drawing.Size(233, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "DOB";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(193, 146);
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtEmail.Location = new System.Drawing.Point(242, 120);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 20);
+            this.txtEmail.Size = new System.Drawing.Size(138, 20);
             this.txtEmail.TabIndex = 9;
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(193, 178);
+            this.dtpDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpDOB.Location = new System.Drawing.Point(242, 148);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(200, 20);
+            this.dtpDOB.Size = new System.Drawing.Size(138, 20);
             this.dtpDOB.TabIndex = 10;
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 257);
+            this.label6.Location = new System.Drawing.Point(3, 203);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(233, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Gender";
             // 
             // txtReg
             // 
-            this.txtReg.Location = new System.Drawing.Point(193, 220);
+            this.txtReg.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg.Location = new System.Drawing.Point(242, 176);
             this.txtReg.Name = "txtReg";
-            this.txtReg.Size = new System.Drawing.Size(200, 20);
+            this.txtReg.Size = new System.Drawing.Size(138, 20);
             this.txtReg.TabIndex = 16;
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(65, 220);
+            this.label7.Location = new System.Drawing.Point(3, 179);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.Size = new System.Drawing.Size(233, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "RegistrationNo";
             // 
@@ -242,6 +262,8 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem1,
             this.addStudentToolStripMenuItem1,
@@ -250,9 +272,9 @@
             this.groupToolStripMenuItem,
             this.projectToolStripMenuItem,
             this.reportsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 7);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(575, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -389,43 +411,96 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(193, 257);
+            this.comboBox1.Location = new System.Drawing.Point(242, 201);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.Size = new System.Drawing.Size(138, 21);
             this.comboBox1.TabIndex = 19;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox1.Location = new System.Drawing.Point(18, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(545, 321);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cmdSave, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtReg, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtFirstName, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dtpDOB, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtEmail, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtContact, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label6, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.txtLastName, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 64);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.63636F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.36364F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(478, 257);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(533, 39);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Person
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 359);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtReg);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dtpDOB);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtContact);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.cmdSave);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Person";
             this.Text = "Person";
             this.Load += new System.EventHandler(this.Person_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -471,6 +546,9 @@
         private System.Windows.Forms.ToolStripMenuItem groupsWithProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advisorWithGroupProjectToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
 

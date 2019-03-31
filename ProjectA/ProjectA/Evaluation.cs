@@ -39,15 +39,7 @@ namespace ProjectA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Insert into Evaluation Values(@Name,@TotalMarks,@TotalWeightage)", con);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@Name", txtName.Text);
-            cmd.Parameters.AddWithValue("@TotalMarks", Convert.ToInt32(txtTotalMarks.Text));
-            cmd.Parameters.AddWithValue("@TotalWeightage", Convert.ToInt32(txtMarksWeightage.Text));
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Evaluation details added Successfully", "Evaluation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -172,6 +164,145 @@ namespace ProjectA
         private void advisorsWithGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MarksSheet l = MarksSheet.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Insert into Evaluation Values(@Name,@TotalMarks,@TotalWeightage)", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@Name", txtName.Text);
+            cmd.Parameters.AddWithValue("@TotalMarks", Convert.ToInt32(txtTotalMarks.Text));
+            cmd.Parameters.AddWithValue("@TotalWeightage", Convert.ToInt32(txtMarksWeightage.Text));
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Evaluation details added Successfully", "Evaluation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void advisorsWithGroupProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MarksSheet l = MarksSheet.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupsWithProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ShowGroupProjects l = ShowGroupProjects.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void createProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Project l = Project.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void assignGroupProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            GroupProject l = GroupProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteProjectDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteProject l = UpdateDeleteProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupStudentsToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            GroupStudents l = GroupStudents.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void deleteGroupToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            DeleteGroup l = DeleteGroup.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupWiseToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Evaluation l = Evaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void individualEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            GroupEvaluation l = GroupEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteEvaluation l = UpdateDeleteEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editGroupEvaluationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            EditEvaluation l = EditEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void addAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Advisor l = Advisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void projectAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ProjectAdvisor l = ProjectAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteAdvisorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteAdvisor l = UpdateDeleteAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void seToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Person l = Person.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void searchStudentsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            StudentsRecord l = StudentsRecord.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editStudentDataToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteStudent l = UpdateDeleteStudent.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void homeToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            HomePage l = HomePage.getInstance();
             l.Show();
             this.Hide();
         }
