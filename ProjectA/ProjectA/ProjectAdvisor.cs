@@ -65,6 +65,8 @@ namespace ProjectA
         {
             GetProjectRecord();
             GetAdvisorRecord();
+           // this.gdAdvisor.Columns["Id"].Visible = false;
+            this.gdProject.Columns["Id"].Visible = false;
         }
 
         private void gdProject_CellClick(object sender, DataGridViewCellEventArgs e)

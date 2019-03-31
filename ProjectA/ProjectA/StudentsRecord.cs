@@ -53,13 +53,14 @@ namespace ProjectA
             //}
             //dataGridView1.DataSource = students;
             GetStudentRecord();
+            this.dataGridView1.Columns["Id"].Visible = false;
         }
 
         private void GetStudentRecord()
         {
             SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
             //SqlCommand cmd = new SqlCommand("Select * from Person", con);
-            SqlCommand cmd = new SqlCommand("SELECT Person.FirstName,Person.LastName,Person.Contact,Person.Email,Person.DateOfBirth,Person.Gender,Student.RegistrationNo from Person INNER JOIN Student on Person.Id=Student.Id ", con);
+            SqlCommand cmd = new SqlCommand("SELECT Person.Id,Person.FirstName,Person.LastName,Person.Contact,Person.Email,Person.DateOfBirth,Person.Gender,Student.RegistrationNo from Person INNER JOIN Student on Person.Id=Student.Id ", con);
   
 
             DataTable dt = new DataTable();

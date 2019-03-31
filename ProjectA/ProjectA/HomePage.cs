@@ -185,6 +185,8 @@ namespace ProjectA
             this.Hide();
         }
 
+       
+
         //private void createGroupToolStripMenuItem_Click(object sender, EventArgs e)
         //{
         //    Group l = Group.getInstance();

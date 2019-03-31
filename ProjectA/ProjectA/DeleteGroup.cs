@@ -33,9 +33,46 @@ namespace ProjectA
         }
         SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
         public int stdID { get; set; }
+
+        private void MergeGridviewCells(DataGridView DGV, int[] idx)
+        {
+            DataGridViewRow Prev = null;
+
+            foreach (DataGridViewRow item in DGV.Rows)
+            {
+                if (Prev != null)
+                {
+                    string firstCellText = string.Empty;
+                    string secondCellText = string.Empty;
+
+                    foreach (int i in idx)
+                    {
+                        DataGridViewCell firstCell = Prev.Cells[i];
+                        DataGridViewCell secondCell = item.Cells[i];
+
+                        firstCellText = (firstCell != null && firstCell.Value != null ? firstCell.Value.ToString() : string.Empty);
+                        secondCellText = (secondCell != null && secondCell.Value != null ? secondCell.Value.ToString() : string.Empty);
+
+                        if (firstCellText == secondCellText)
+                        {
+                            secondCell.Style.ForeColor = Color.Transparent;
+                        }
+                        else
+                        {
+                            Prev = item;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    Prev = item;
+                }
+            }
+        }
         private void GetGroupRecord()
         {
-            SqlCommand cmd = new SqlCommand("Select * from [Group]", con);
+            SqlCommand cmd = new SqlCommand("SELECT GroupStudent.GroupId,Student.RegistrationNo,[Group].Created_On from GroupStudent INNER JOIN Student on GroupStudent.StudentId=Student.Id inner join  [Group] on GroupStudent.GroupID=[Group].Id", con);
 
             DataTable dt = new DataTable();
             con.Open();
@@ -45,6 +82,7 @@ namespace ProjectA
             con.Close();
 
             gdGroupRecord.DataSource = dt;
+            MergeGridviewCells(gdGroupRecord, new int[] { 0});
         }
         
         private void DeleteGroup_Load(object sender, EventArgs e)

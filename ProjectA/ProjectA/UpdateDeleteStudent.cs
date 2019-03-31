@@ -36,13 +36,15 @@ namespace ProjectA
         private void UpdateDeleteStudent_Load(object sender, EventArgs e)
         {
             GetStudentRecord();
+            this.dataGridView1.Columns["Id"].Visible = false;
         }
 
         private void GetStudentRecord()
         {
-            SqlCommand cmd = new SqlCommand("Select * from Person", con);
+            SqlCommand cmd = new SqlCommand("SELECT Person.Id,Person.FirstName,Person.LastName,Person.Contact,Person.Email,Person.DateOfBirth,Person.Gender,Student.RegistrationNo from Person INNER JOIN Student on Person.Id=Student.Id", con);
 
             DataTable dt = new DataTable();
+            con.Close();
             con.Open();
 
             SqlDataReader rd = cmd.ExecuteReader();
@@ -83,7 +85,17 @@ namespace ProjectA
                 cmd.Parameters.AddWithValue("@Gender", gndr);
                 con.Open();
                 cmd.ExecuteNonQuery();
+
+                SqlCommand cdd = new SqlCommand("select IDENT_CURRENT('Person')", con);
+                int s = Convert.ToInt32(cdd.ExecuteScalar());
                 con.Close();
+
+                SqlCommand cd = new SqlCommand("Update Student SET RegistrationNo=@RegistrationNo where Id=@ID ", con);
+                cd.CommandType = CommandType.Text;
+                cd.Parameters.AddWithValue("@ID", this.stdID);
+                cd.Parameters.AddWithValue("@RegistrationNo", txtReg.Text);
+                con.Open();
+                cd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 GetStudentRecord();
@@ -142,6 +154,7 @@ namespace ProjectA
             {
                 rdfml.Checked = true;
             }
+            txtReg.Text = dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
         }
 
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)

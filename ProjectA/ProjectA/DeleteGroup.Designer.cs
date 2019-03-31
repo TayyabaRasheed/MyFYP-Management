@@ -74,7 +74,7 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(491, 259);
+            this.groupBox1.Size = new System.Drawing.Size(510, 259);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Delete";
@@ -94,7 +94,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.12953F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.87047F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(479, 193);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(498, 193);
             this.tableLayoutPanel2.TabIndex = 7;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -107,14 +107,14 @@
             this.gdGroupRecord.Location = new System.Drawing.Point(3, 3);
             this.gdGroupRecord.Name = "gdGroupRecord";
             this.gdGroupRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdGroupRecord.Size = new System.Drawing.Size(473, 138);
+            this.gdGroupRecord.Size = new System.Drawing.Size(492, 138);
             this.gdGroupRecord.TabIndex = 4;
             this.gdGroupRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdGroupRecord_CellClick_1);
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(147, 153);
+            this.button1.Location = new System.Drawing.Point(157, 153);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(184, 37);
             this.button1.TabIndex = 6;
@@ -133,7 +133,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(479, 26);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(498, 26);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // menuStrip1
@@ -150,7 +150,7 @@
             this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 1);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(479, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(498, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -343,7 +343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 282);
+            this.ClientSize = new System.Drawing.Size(534, 282);
             this.Controls.Add(this.groupBox1);
             this.Name = "DeleteGroup";
             this.Text = "DeleteGroup";
