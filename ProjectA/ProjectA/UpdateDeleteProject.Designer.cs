@@ -61,15 +61,15 @@
             this.gdProjectRecord = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdProjectRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // updateDeleteEvaluationToolStripMenuItem
@@ -77,12 +77,14 @@
             this.updateDeleteEvaluationToolStripMenuItem.Name = "updateDeleteEvaluationToolStripMenuItem";
             this.updateDeleteEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.updateDeleteEvaluationToolStripMenuItem.Text = "UpdateDelete Evaluation";
+            this.updateDeleteEvaluationToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteEvaluationToolStripMenuItem_Click);
             // 
             // groupWiseToolStripMenuItem
             // 
             this.groupWiseToolStripMenuItem.Name = "groupWiseToolStripMenuItem";
             this.groupWiseToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.groupWiseToolStripMenuItem.Text = "Evaluation Details";
+            this.groupWiseToolStripMenuItem.Click += new System.EventHandler(this.groupWiseToolStripMenuItem_Click);
             // 
             // evaluateGroupsToolStripMenuItem
             // 
@@ -100,6 +102,7 @@
             this.individualEvaluationToolStripMenuItem.Name = "individualEvaluationToolStripMenuItem";
             this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.individualEvaluationToolStripMenuItem.Text = "Groupl Evaluation";
+            this.individualEvaluationToolStripMenuItem.Click += new System.EventHandler(this.individualEvaluationToolStripMenuItem_Click);
             // 
             // editGroupEvaluationToolStripMenuItem
             // 
@@ -113,18 +116,21 @@
             this.updateDeleteAdvisorToolStripMenuItem.Name = "updateDeleteAdvisorToolStripMenuItem";
             this.updateDeleteAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.updateDeleteAdvisorToolStripMenuItem.Text = "UpdateDelete Advisor";
+            this.updateDeleteAdvisorToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteAdvisorToolStripMenuItem_Click);
             // 
             // projectAdvisorToolStripMenuItem
             // 
             this.projectAdvisorToolStripMenuItem.Name = "projectAdvisorToolStripMenuItem";
             this.projectAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.projectAdvisorToolStripMenuItem.Text = "Project Advisor";
+            this.projectAdvisorToolStripMenuItem.Click += new System.EventHandler(this.projectAdvisorToolStripMenuItem_Click);
             // 
             // addAdvisorToolStripMenuItem
             // 
             this.addAdvisorToolStripMenuItem.Name = "addAdvisorToolStripMenuItem";
             this.addAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.addAdvisorToolStripMenuItem.Text = "Add Advisor";
+            this.addAdvisorToolStripMenuItem.Click += new System.EventHandler(this.addAdvisorToolStripMenuItem_Click);
             // 
             // addInstructorToolStripMenuItem1
             // 
@@ -141,18 +147,21 @@
             this.editStudentDataToolStripMenuItem.Name = "editStudentDataToolStripMenuItem";
             this.editStudentDataToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.editStudentDataToolStripMenuItem.Text = "Update&Delete Student Data";
+            this.editStudentDataToolStripMenuItem.Click += new System.EventHandler(this.editStudentDataToolStripMenuItem_Click);
             // 
             // searchStudentsToolStripMenuItem
             // 
             this.searchStudentsToolStripMenuItem.Name = "searchStudentsToolStripMenuItem";
             this.searchStudentsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.searchStudentsToolStripMenuItem.Text = "Student\'s Record";
+            this.searchStudentsToolStripMenuItem.Click += new System.EventHandler(this.searchStudentsToolStripMenuItem_Click);
             // 
             // seToolStripMenuItem
             // 
             this.seToolStripMenuItem.Name = "seToolStripMenuItem";
             this.seToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.seToolStripMenuItem.Text = "Add Students";
+            this.seToolStripMenuItem.Click += new System.EventHandler(this.seToolStripMenuItem_Click);
             // 
             // addStudentToolStripMenuItem1
             // 
@@ -169,6 +178,7 @@
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
             this.homeToolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
             this.homeToolStripMenuItem1.Text = "Home";
+            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
             // 
             // menuStrip1
             // 
@@ -203,6 +213,7 @@
             this.groupStudentsToolStripMenuItem1.Name = "groupStudentsToolStripMenuItem1";
             this.groupStudentsToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
             this.groupStudentsToolStripMenuItem1.Text = "Group Students";
+            this.groupStudentsToolStripMenuItem1.Click += new System.EventHandler(this.groupStudentsToolStripMenuItem1_Click);
             // 
             // deleteGroupToolStripMenuItem
             // 
@@ -226,12 +237,14 @@
             this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
             this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.createProjectToolStripMenuItem.Text = "Create Project";
+            this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
             // 
             // assignGroupProjectToolStripMenuItem
             // 
             this.assignGroupProjectToolStripMenuItem.Name = "assignGroupProjectToolStripMenuItem";
             this.assignGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.assignGroupProjectToolStripMenuItem.Text = "Assign Group Project";
+            this.assignGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.assignGroupProjectToolStripMenuItem_Click);
             // 
             // updateDeleteProjectDetailsToolStripMenuItem
             // 
@@ -350,19 +363,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project CRUD";
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel3
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 19);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 46);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.gdProjectRecord, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(303, 79);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(473, 202);
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
@@ -384,20 +398,19 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(260, 196);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // tableLayoutPanel3
+            // tableLayoutPanel1
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.gdProjectRecord, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(303, 79);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(473, 202);
-            this.tableLayoutPanel3.TabIndex = 2;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 19);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 46);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // UpdateDeleteProject
             // 
@@ -412,11 +425,11 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdProjectRecord)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

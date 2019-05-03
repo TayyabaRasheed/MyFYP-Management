@@ -78,25 +78,45 @@ namespace ProjectA
         {
             GroupID = Convert.ToInt32(gdGroup.SelectedRows[0].Cells[0].Value);
         }
-
+        
         private void cmdSave_Click(object sender, EventArgs e)
         {
+
+
             con.Open();
-            SqlCommand cmd2 = new SqlCommand("Insert into GroupEvaluation Values (@GroupId,@EvaluationId,@ObtainedMarks,@EvaluationDate)", con);
-            cmd2.CommandType = CommandType.Text;
+            SqlCommand cdd = new SqlCommand("select TotalMarks from Evaluation", con);
+            int s = Convert.ToInt32(cdd.ExecuteScalar());
 
-            cmd2.Parameters.AddWithValue("@GroupId", this.GroupID);
+            if (Convert.ToInt32(txtMarks.Text) < 0 || Convert.ToInt32(txtMarks.Text) > s)
+            {
+                MessageBox.Show("Marks should be within range");
+                con.Close();
+            }
+            else
+            {
+                SqlCommand cmd2 = new SqlCommand("Insert into GroupEvaluation Values (@GroupId,@EvaluationId,@ObtainedMarks,@EvaluationDate)", con);
+                cmd2.CommandType = CommandType.Text;
+
+                cmd2.Parameters.AddWithValue("@GroupId", this.GroupID);
 
 
 
 
-            cmd2.Parameters.AddWithValue("@EvaluationId", this.EvaluationID);
-            cmd2.Parameters.AddWithValue("@ObtainedMarks", Convert.ToInt32(txtMarks.Text));
+                cmd2.Parameters.AddWithValue("@EvaluationId", this.EvaluationID);
 
-            cmd2.Parameters.AddWithValue("@EvaluationDate", dtpDate.Value);
-            cmd2.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Group evaluated  Successfully", "GroupEvaluation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                cmd2.Parameters.AddWithValue("@ObtainedMarks", Convert.ToInt32(txtMarks.Text));
+
+
+
+
+                cmd2.Parameters.AddWithValue("@EvaluationDate", dtpDate.Value);
+                cmd2.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Group evaluated  Successfully", "GroupEvaluation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
         }
 
         private void addStudentToolStripMenuItem1_Click(object sender, EventArgs e)

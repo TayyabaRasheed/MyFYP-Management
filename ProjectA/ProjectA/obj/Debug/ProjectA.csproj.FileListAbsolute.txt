@@ -24,3 +24,29 @@ E:\ProjectA\ProjectA\obj\Debug\ProjectA.DeleteGroup.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.EditEvaluation.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.ShowGroupProjects.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.MarksSheet.resources
+E:\Mini Project\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
+E:\Mini Project\ProjectA\ProjectA\bin\Debug\ProjectA.exe
+E:\Mini Project\ProjectA\ProjectA\bin\Debug\ProjectA.pdb
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.csprojResolveAssemblyReference.cache
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.Advisor.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.DeleteGroup.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.EditEvaluation.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.Evaluation.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.Person.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.GroupEvaluation.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.GroupProject.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.GroupStudents.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.HomePage.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.MarksSheet.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.Project.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.ProjectAdvisor.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.ShowGroupProjects.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.StudentsRecord.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteAdvisor.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteEvaluation.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteProject.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteStudent.resources
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.Cache
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.exe
+E:\Mini Project\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
